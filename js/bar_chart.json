@@ -1,0 +1,97 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/CaiHeShun/FIT3179A2/main/data/Cleaned_Smoking_Data.csv"
+  },
+  "hconcat": [
+    {
+      "layer": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "color": {
+              "field": "Percentage_Total_Smokers",
+              "type": "quantitative",
+              "title": "Percentage of Total Smokers",
+              "scale": {
+                "range": [
+                  "#ffffff",
+                  "#ffcc99",
+                  "#ff9966",
+                  "#ff6633",
+                  "#ff3300",
+                  "#ff0000",
+                  "#cc0000",
+                  "#990000"
+                ]
+              },
+              "legend": null
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "dx": 3
+          },
+          "encoding": {
+            "text": {
+              "field": "Percentage_Total_Smokers",
+              "type": "quantitative"
+            }
+          }
+        }
+      ],
+      "transform": [{"filter": {"param": "brush"}}],
+      "encoding": {
+        "y": {
+          "field": "Country",
+          "type": "nominal",
+          "sort": "-x",
+          "title": null
+        },
+        "x": {
+          "aggregate": "sum",
+          "field": "Percentage_Total_Smokers",
+          "type": "quantitative",
+          "axis": null
+        },
+        "tooltip": [
+          {
+            "field": "Smokers_Total",
+            "type": "quantitative",
+            "title": "Total Smokers"
+          }
+        ]
+      },
+      "width": 150,
+      "height": 990
+    },
+    {
+      "height": 200,
+      "width": 50,
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["y"]}}
+      ],
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "Country",
+          "type": "nominal",
+          "sort": "-x",
+          "axis": null
+        },
+        "x": {
+          "aggregate": "sum",
+          "field": "Percentage_Total_Smokers",
+          "type": "quantitative",
+          "axis": null
+        },
+        "color": {"value": "#990000"}
+      }
+    }
+  ],
+  "config": {"view": {"stroke": "transparent"}}
+}
