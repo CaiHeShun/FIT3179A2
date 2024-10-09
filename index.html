@@ -24,22 +24,9 @@
         <hr class="separate">
         <br>
         <p>
-            Smoking is a major public health concern worldwide. This collection of visualizations provides insights into smoking trends, including the percentage of smokers by country, the relationship between cigarette prices and smoking rates, and global smoking prevalence.
+            Smoking is a major public health concern worldwide. This collection of visualizations provides insights into smoking trends, including the global prevalence of smoking, the relationship between cigarette prices and smoking rates, and the percentage of smokers by country.
         </p>
         <br>
-
-        <div class="row">
-            <div class="column">
-                <h2>Bar Chart: Percentage of Total Smokers by Country</h2>
-                <div id="bar_chart" class="container"></div>
-            </div>
-            <div class="column">
-                <h2>Bubble Plot: Smoking Rate vs. Cigarette Price</h2>
-                <div id="bubble_plot"></div>
-            </div>
-        </div>
-        <br>
-        <hr class="separate">
 
         <h2>Global Smoking Rates in 2022</h2>
         <div class="pure-g">
@@ -50,17 +37,45 @@
         <p>
             The map above shows the smoking rates across different countries in 2022. The colors represent the prevalence of smoking, with darker shades indicating higher rates. Use the filters to explore the data and gain insights into global smoking trends.
         </p>
+        <br>
+        <hr class="separate">
+
+        <h2>Bubble Plot: Smoking Rate vs. Cigarette Price</h2>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="bubble_plot" class="container"></div>
+            </div>
+        </div>
+        <p>
+            This bubble plot illustrates the relationship between smoking rates and the price of the most sold brand of cigarettes in various regions. Larger bubbles indicate higher smoking prevalence.
+        </p>
+        <br>
+        <hr class="separate">
+
+        <h2>Bar Chart: Percentage of Total Smokers by Country</h2>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="bar_chart" class="container"></div>
+            </div>
+        </div>
+        <p>
+            The bar chart displays the percentage of smokers across different countries. It provides a clear comparison of smoking prevalence by region, showing which countries have the highest smoking rates.
+        </p>
     </div>
 
     <script type="text/javascript">
-        // Embed the bar chart visualization
-        vegaEmbed('#bar_chart', 'bar_chart.json').catch(console.error);
+        var specVis1 = "./js/smoking_rate_choropleth_map.json";
+        var specVis2 = "./js/smoking_rate_bubbleplot.json";
+        var specVis3 = "./js/bar_chart.json";
+        
+        // Embed the choropleth map visualization
+        vegaEmbed('#choropleth_map', specVis1).catch(console.error);
 
         // Embed the bubble plot visualization
-        vegaEmbed('#bubble_plot', 'smoking_rate_bubbleplot.json').catch(console.error);
+        vegaEmbed('#bubble_plot', specVis2).catch(console.error);
 
-        // Embed the choropleth map visualization
-        vegaEmbed('#choropleth_map', 'smoking_rate_choropleth_map.json').catch(console.error);
+        // Embed the bar chart visualization
+        vegaEmbed('#bar_chart', specVis3).catch(console.error);
     </script>
 </body>
 
