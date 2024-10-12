@@ -21,7 +21,7 @@ body {
 
 /* Page */
 .page {
-    width: 1350px;
+    width: 1400px;
     margin: auto;
     padding-top: 35px;
 }
@@ -92,5 +92,5 @@ body {
 
 /* Background Color for Body */
 body {
-    background-color: #000000;
+    background-color: #ffd1dc;
 }
