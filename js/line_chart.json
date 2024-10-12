@@ -1,5 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
   "title": "Daily Cigarettes Smoked in Each Region (1980-2012).",
   "data": {
     "url": "https://raw.githubusercontent.com/CaiHeShun/FIT3179A2/main/data/Yearly_Region_Averages.csv"
