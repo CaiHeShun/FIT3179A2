@@ -62,6 +62,15 @@
             </div>
         </div>
 
+        <!-- Smoking Rate Bar Chart -->
+        <div class="pure-g visualization-container">
+            <div class="pure-u-1 text-center">
+                <h2>Countries Ranked by Smoking Rates (Bar Chart)</h2>
+                <p>This bar chart ranks countries based on their total smoking rates, giving a clear visual representation of the countries with the highest and lowest percentages of smokers.</p>
+                <div id="bar_chart"></div>
+            </div>
+        </div>
+
         <!-- Daily Cigarettes Smoked Line Chart -->
         <div class="pure-g visualization-container">
             <div class="pure-u-1 text-center">
@@ -80,15 +89,6 @@
             </div>
         </div>
 
-        <!-- Smoking Rate Bar Chart -->
-        <div class="pure-g visualization-container">
-            <div class="pure-u-1 text-center">
-                <h2>Countries Ranked by Smoking Rates (Bar Chart)</h2>
-                <p>This bar chart ranks countries based on their total smoking rates, giving a clear visual representation of the countries with the highest and lowest percentages of smokers.</p>
-                <div id="bar_chart"></div>
-            </div>
-        </div>
-
         <!-- Footer -->
         <div class="pure-g">
             <div class="pure-u-1 text-center" id="end_credit">
@@ -99,20 +99,27 @@
 
     <!-- Vega-Lite Embedding Scripts -->
     <script type="text/javascript">
+
+        var specVis1 = "./js/smoking_rate_choropleth_map.json;
+        var specVis2 = "./js/smoking_rate_bubbleplot.json";
+        var specVis3 = "./js/bar_chart.json";
+        var specVis4 = "./js/line_chart.json";
+        var specVis5 = "./js/gender_butterfly_chart.json";
+        
         // Embed the Choropleth Map
-        vegaEmbed('#choropleth_map', 'smoking_rate_choropleth_map.json', { "actions": false }).catch(console.error);
+        vegaEmbed('#choropleth_map', specVis1, { "actions": false }).catch(console.error);
 
         // Embed the Bubble Plot
-        vegaEmbed('#bubble_plot', 'smoking_rate_bubbleplot.json', { "actions": false }).catch(console.error);
-
-        // Embed the Line Chart
-        vegaEmbed('#line_chart', 'line_chart.json', { "actions": false }).catch(console.error);
-
-        // Embed the Butterfly Chart
-        vegaEmbed('#gender_butterfly_chart', 'gender_butterfly_chart.json', { "actions": false }).catch(console.error);
+        vegaEmbed('#bubble_plot', specVis2, { "actions": false }).catch(console.error);
 
         // Embed the Bar Chart
-        vegaEmbed('#bar_chart', 'bar_chart.json', { "actions": false }).catch(console.error);
+        vegaEmbed('#bar_chart', specVis3, { "actions": false }).catch(console.error);
+
+        // Embed the Line Chart
+        vegaEmbed('#line_chart', specVis4, { "actions": false }).catch(console.error);
+
+        // Embed the Butterfly Chart
+        vegaEmbed('#gender_butterfly_chart', specVis5, { "actions": false }).catch(console.error);
     </script>
 </body>
 </html>
