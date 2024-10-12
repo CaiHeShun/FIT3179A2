@@ -1,21 +1,38 @@
 /* Fonts */
-h1, h2 {
+body {
     font-family: 'Poppins', sans-serif;
-    font-weight: 700;
+    background-color: white;
+    color: #333;
 }
 
 h1 {
-    font-size: 48px;
-    margin-top: 10px;
-    color: #444;
+    font-size: 36px;
+    margin: 20px 0;
 }
 
 h2 {
-    font-size: 36px;
-    margin-top: 20px;
+    font-size: 28px;
     margin-bottom: 10px;
+}
+
+/* Page */
+.page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Visualization Frames */
+#choro_frame, #bubble_frame, #bar_frame, #line_frame, #butterfly_frame {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-center {
     text-align: center;
-    color: #555;
 }
 
 /* Small Text */
@@ -23,102 +40,11 @@ h2 {
     font-size: 12px;
 }
 
-/* Body */
-body {
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-/* Page */
-.page {
-    width: 1200px;
-    margin: auto;
-    padding-top: 35px;
-}
-
-/* Pure Grid */
-.pure-g {
-    margin-bottom: 25px;
-}
-
-/* Small Font */
-.small-font {
-    font-size: 14px;
-}
-
-/* Banner */
-#banner {
-    padding: 20px;
-    background-color: white;
-}
-
-/* Choro Frame */
-#choro_frame {
-    background-color: white;
-    padding: 20px;
-    margin: 0 auto;
+/* Footer */
+#footer {
     text-align: center;
-}
-
-/* Container styling for each chart */
-#bar_chart, #gender_butterfly_chart, #line_chart, #smoking_rate_bubbleplot, #smoking_rate_choropleth_map {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Frame for each visualization */
-#bar_frame, #scatter_frame, #line_frame, #choro_frame {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* End Credit */
-#end_credit {
-    background-color: black;
-    padding: 10px 20px;
+    padding: 10px;
+    background-color: #333;
     color: white;
-    text-align: center;
-}
-
-/* Hover effects for visualizations */
-#bar_chart:hover, #gender_butterfly_chart:hover, #line_chart:hover, #smoking_rate_bubbleplot:hover, #smoking_rate_choropleth_map:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Style the charts title */
-h2::after {
-    content: "";
-    display: block;
-    width: 80px;
-    margin: 10px auto;
-    height: 3px;
-    background-color: #666;
-}
-
-/* Responsive styling for smaller screens */
-@media only screen and (max-width: 768px) {
-    h1 {
-        font-size: 1.8em;
-    }
-
-    h2 {
-        font-size: 1.4em;
-    }
-
-    #bar_chart, #gender_butterfly_chart, #line_chart, #smoking_rate_bubbleplot, #smoking_rate_choropleth_map {
-        width: 100%;
-        padding: 5px;
-    }
+    margin-top: 20px;
 }
