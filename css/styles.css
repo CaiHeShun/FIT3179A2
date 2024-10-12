@@ -11,6 +11,7 @@ body {
 h1, h2 {
     margin: 10px 0;
     padding: 0;
+    text-align: center;
 }
 
 h1 {
@@ -20,6 +21,14 @@ h1 {
 
 h2 {
     font-size: 28px;
+    text-align: center;
+}
+
+/* Center descriptions and text */
+p {
+    text-align: center;
+    margin: 10px auto;
+    max-width: 800px; /* Limits the width of paragraphs for readability */
 }
 
 /* Page */
@@ -32,13 +41,17 @@ h2 {
 /* Visualization Frames */
 #choro_frame, #bubble_frame, #bar_frame, #line_frame, #butterfly_frame {
     background-color: #f4f4f4;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-.text-center {
+/* Centering visualizations */
+#choropleth_map, #bubble_plot, #bar_chart, #line_chart, #butterfly_chart {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
     text-align: center;
 }
 
@@ -56,6 +69,7 @@ h2 {
 /* Small Text */
 #small_text {
     font-size: 12px;
+    text-align: center;
 }
 
 /* Responsive layout adjustments */
