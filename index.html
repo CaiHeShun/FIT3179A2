@@ -1,101 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smoking Data Visualizations</title>
+    <title>All About Wages</title>
 
-    <!-- Vega & Vega-Lite -->
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-    <!-- Import PureCSS -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+    <style>
+        .text-center {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="page">
-        <!-- Header Section -->
+        <!-- pure grid group -->
         <div class="pure-g" id="banner">
-            <div class="pure-u-1 text-center">
-                <h1>Exploring the Impact of Smoking Worldwide</h1>
-                <p>Smoking remains a significant global health concern. It contributes to various diseases, economic burdens, and societal impacts.</p>
-                <p>Our visualizations explore the prevalence of smoking and its effects on public health. Understanding these trends is critical for effective intervention and policy-making.</p>
+            <div class="pure-u-1-1 text-center">
+                <h1>All About <span style="color: #990000;">WAGE$</span></h1>
+                <p>________________________________________________________________________________________________________________________________________________</p>
+                <p>________________________________________________________________________________________________________________________________________________</p>
             </div>
         </div>
+        <!-- end pure grid group -->
 
-        <!-- Main Visualization: Choropleth Map -->
+        <!-- pure grid group -->
         <div class="pure-g">
-            <div class="pure-u-1">
+            <div class="pure-u-1-1">
                 <div id="choro_frame">
-                    <h2>Smoking Prevalence by Country</h2>
-                    <p>The choropleth map highlights smoking rates globally. Differences in rates reflect cultural, economic, and public health factors.</p>
-                    <p>Countries with higher saturation levels indicate higher smoking rates.</p>
-                    <div id="small_text">
-                        <p>* Hover to view smoking rate per country. Use the slider to filter.</p>
+                    <div class="description-left text-center">
+                        <h2>________________________________________________________________________________________________________________________________________________</h2>
+                        <p>________________________________________________________________________________________________________________________________________________</p>
+                        <p>________________________________________________________________________________________________________________________________________________</p>
+                        <p>In this choropleth map, the color saturation indicates the value of the ________. The more <b>saturated</b> the country, the <b>higher</b> the minimum wage.</p>
+                        <div id="small_text">
+                            <p>* Use the slider to filter countries with wages above a minimum value.</p>
+                        </div>
                     </div>
                     <div id="choropleth_map"></div>
                 </div>
             </div>
         </div>
+        <!-- end pure grid group -->
 
-        <!-- Visualization 2: Bar Chart and Line Chart on Same Row -->
+        <!-- pure grid group -->
         <div class="pure-g">
-            <div class="pure-u-1-2">
-                <div id="bar_frame">
-                    <h2>Top 10 Countries by Cigarette Consumption</h2>
-                    <p>This bar chart ranks countries based on cigarette consumption. Cultural attitudes, economics, and regulations can impact these rankings.</p>
+            <div class="pure-u-2-3">
+                <div id="scatter_frame">
+                    <h2>________________________________________________________________________________________________________________________________________________</h2>
+                    <p>________________________________________________________________________________________________________________________________________________</p>
+                    <p>This pannable and zoomable bubble plot allows us to directly compare the relationship between the 2 attributes, with the <b>color</b> indicating the region and <b>size</b> of the bubbles indicating the percentage size.</p>
                     <div id="small_text">
-                        <p>* Hover to view specific consumption values per country.</p>
+                        <p>* Select region to filter by region and use the slider to filter countries with a population size larger than a minimum value.</p>
                     </div>
-                    <div id="bar_chart"></div>
+                    <div id="bubble_plot"></div>
                 </div>
-            </div>
-
-            <div class="pure-u-1-2">
                 <div id="line_frame">
-                    <h2>Smoking Rate Trends Over Time</h2>
-                    <p>This line chart visualizes smoking rate changes over time. The data tracks trends across different countries to evaluate how smoking behavior evolves.</p>
+                    <h2>________________________________________________________________________________________________________________________________________________/h2>
+                    <p>________________________________________________________________________________________________________________________________________________</p>
+                    <p>________________________________________________________________________________________________________________________________________________</p>
                     <div id="small_text">
-                        <p>* Select a country and adjust the time range using the timeline.</p>
+                        <p>* Select a region to view data for. The bottom area chart is an overview that allows for filtering of time period.</p>
                     </div>
                     <div id="line_chart"></div>
                 </div>
             </div>
-        </div>
-
-        <!-- Visualization 3: Butterfly Chart and Bubble Plot on Same Row -->
-        <div class="pure-g">
-            <div class="pure-u-1-2">
-                <div id="butterfly_frame">
-                    <h2>Smoking Rates: Male vs. Female</h2>
-                    <p>This butterfly chart compares smoking rates between males and females. Gender-specific behaviors and cultural factors often drive differences.</p>
+            <div class="pure-u-1-3">
+                <div id="bar_frame">
+                    <h2>________________________________________________________________________________________________________________________________________________</h2>
+                    <p>________________________________________________________________________________________________________________________________________________</p>
+                    <p>________________________________________________________________________________________________________________________________________________</p>
+                    <p>________________________________________________________________________________________________________________________________________________.</p>
+                    <p>________________________________________________________________________________________________________________________________________________</p>
                     <div id="small_text">
-                        <p>* Hover over bars to view gender-specific rates.</p>
+                        <p>* Use the minimap on the right to filter by section.</p>
+                    </div>
+                    <div id="bar_chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- end pure grid group -->
+
+                <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="butterfly_frame">
+                    <div class="description-left text-center">
+                        <h2>________________________________________________________________________________________________________________________________________________</h2>
+                        <p>________________________________________________________________________________________________________________________________________________</p>
+                        <p>________________________________________________________________________________________________________________________________________________</p>
+                        <p>________________________________________________________________________________________________________________________________________________</p>
+                        <div id="small_text">
+                            <p>________________________________________________________________________________________________________________________________________________</p>
+                        </div>
                     </div>
                     <div id="butterfly_chart"></div>
                 </div>
             </div>
+        </div>
+        <!-- end pure grid group -->
 
-            <div class="pure-u-1-2">
-                <div id="bubble_frame">
-                    <h2>Smoking Rates vs. Healthcare Spending</h2>
-                    <p>This bubble plot reveals the relationship between smoking rates and healthcare spending. Larger bubbles indicate larger populations, while color represents continent.</p>
-                    <div id="small_text">
-                        <p>* Pan and zoom to explore regions. Larger bubbles represent bigger populations.</p>
-                    </div>
-                    <div id="bubble_plot"></div>
-                </div>
+        
+
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-1 text-center" id="end_credit">
+                <p style="color: white;">Copyright © 2024 Dylan Thai</p>
+                <p style="color: white;">Data sources: </p>
             </div>
         </div>
+        <!-- end pure grid group -->
     </div>
+    <!-- end page -->
+
     
     <!-- Vega Embed Scripts -->
     <script type="text/javascript">
