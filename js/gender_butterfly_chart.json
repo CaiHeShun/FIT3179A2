@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
+  "width": "600",
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/CaiHeShun/FIT3179A2/main/data/Smoking_Data_Cleaned.csv"
