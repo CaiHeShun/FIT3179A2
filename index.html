@@ -1,81 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Smoking Data Visualizations</title>
-
-    <!-- Import Vega & Vega-Lite -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vega-Lite Visualizations</title>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
-    <!-- Import pure.css for styling -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-
 </head>
 <body>
-    <div class="page">
-        <!-- Title section -->
-        <div class="pure-g" id="banner">
-            <div class="pure-u-1">
-                <h1>Smoking Data Visualizations</h1>
-                <p class="text-center">An exploration of smoking rates, gender differences, and trends across different regions.</p>
-            </div>
-        </div>
+    <h1>Vega-Lite Visualizations</h1>
 
-        <!-- Smoking Rate Choropleth Map -->
-        <div class="visualization-container">
-            <h2>Global Smoking Rates: A Geographical Perspective (Choropleth Map)</h2>
-            <p>This choropleth map illustrates smoking prevalence across various countries worldwide.</p>
-<p class="instruction-text">Use the slider below to filter countries with wages above a certain value.</p>
-            <div id="choropleth_map"></div>
-        </div>
+    <h2>Bar Chart of Total Smokers Percentage</h2>
+    <div id="bar_chart"></div>
 
-        <!-- Grid container for Bubble Plot and Bar Chart -->
-        <div class="grid-container visualization-container">
-            <div>
-                <h2>Relationship Between Smoking Rates and Cigarette Prices (Bubble Plot)</h2>
-                <p>This bubble plot explores the correlation between smoking prevalence and cigarette price.</p>
-<p class="instruction-text">Use the range filter to display countries within a specific smoking rate or cigarette price range.</p>
-                <div id="bubble_plot"></div>
-            </div>
-            <div>
-                <h2>Smoking Rates by Country: A Ranked Comparison (Bar Chart)</h2>
-                <p>This bar chart ranks countries based on their total percentage of smokers.</p>
-<p class="instruction-text">Use the minimap on the right to filter specific sections of the chart or drag to zoom in on countries within a specific range of smoking rates.</p>
-                <div id="bar_chart"></div>
-            </div>
-        </div>
+    <h2>Gender Butterfly Chart</h2>
+    <div id="gender_butterfly_chart"></div>
 
-        <!-- Grid container for Line Chart and Butterfly Chart -->
-        <div class="grid-container visualization-container">
-            <div>
-                <h2>Historical Trends: Daily Cigarettes Smoked Per Region (Line Chart)</h2>
-                <p>This line chart tracks the average number of cigarettes smoked per day across regions over time.</p>
-<p class="instruction-text">Use the dropdown filter to select and compare specific regions or time periods.</p>
-                <div id="line_chart"></div>
-            </div>
-            <div>
-                <h2>Comparing Smoking Habits by Gender (Butterfly Chart)</h2>
-                <p>This butterfly chart compares smoking rates between males and females in various countries.</p>
-<p class="instruction-text">Use the toggle buttons to filter and compare smoking habits by gender for specific countries.</p>
-                <div id="gender_butterfly_chart"></div>
-            </div>
-        </div>
+    <h2>Line Chart of Daily Cigarettes Smoked</h2>
+    <div id="line_chart"></div>
 
-        <!-- Footer -->
-        <div id="end_credit">
-            <p>Data sources: Global Smoking Data 2024</p>
-        </div>
-    </div>
+    <h2>Smoking Rate vs. Cigarette Price Bubble Plot</h2>
+    <div id="smoking_rate_bubbleplot"></div>
+
+    <h2>Smoking Rate Choropleth Map</h2>
+    <div id="smoking_rate_choropleth_map"></div>
 
     <!-- Vega-Lite Embedding Scripts -->
     <script type="text/javascript">
