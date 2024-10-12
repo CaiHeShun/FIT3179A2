@@ -3,51 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vega-Lite Visualizations</title>
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <title>Data Visualizations</title>
+
+    <!-- Vega & Vega-Lite -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- Import PureCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Vega-Lite Visualizations</h1>
+    <div class="page">
+        <!-- Header Section -->
+        <div class="pure-g" id="banner">
+            <div class="pure-u-1 text-center">
+                <h1>Data Visualizations</h1>
+                <p>An exploration of various datasets through visual representations.</p>
+            </div>
+        </div>
 
-    <h2>Bar Chart of Total Smokers Percentage</h2>
-    <div id="bar_chart"></div>
+        <!-- Visualization 1: Choropleth Map -->
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <div id="choro_frame">
+                    <h2>Choropleth Map</h2>
+                    <p>This map shows the geographical distribution of data.</p>
+                    <div id="choropleth_map"></div>
+                </div>
+            </div>
+        </div>
 
-    <h2>Gender Butterfly Chart</h2>
-    <div id="gender_butterfly_chart"></div>
+        <!-- Visualization 2: Bubble Plot -->
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <div id="bubble_frame">
+                    <h2>Bubble Plot</h2>
+                    <p>Analyzing relationships between two variables with bubble sizes indicating an additional variable.</p>
+                    <div id="bubble_plot"></div>
+                </div>
+            </div>
+        </div>
 
-    <h2>Line Chart of Daily Cigarettes Smoked</h2>
-    <div id="line_chart"></div>
+        <!-- Visualization 3: Bar Chart -->
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <div id="bar_frame">
+                    <h2>Bar Chart</h2>
+                    <p>Comparison of different categories with respect to a specific variable.</p>
+                    <div id="bar_chart"></div>
+                </div>
+            </div>
+        </div>
 
-    <h2>Smoking Rate vs. Cigarette Price Bubble Plot</h2>
-    <div id="smoking_rate_bubbleplot"></div>
+        <!-- Visualization 4: Line Chart -->
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <div id="line_frame">
+                    <h2>Line Chart</h2>
+                    <p>Trend analysis over time.</p>
+                    <div id="line_chart"></div>
+                </div>
+            </div>
+        </div>
 
-    <h2>Smoking Rate Choropleth Map</h2>
-    <div id="smoking_rate_choropleth_map"></div>
+        <!-- Visualization 5: Butterfly Chart -->
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <div id="butterfly_frame">
+                    <h2>Butterfly Chart</h2>
+                    <p>A side-by-side comparison of two sets of variables.</p>
+                    <div id="butterfly_chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Vega-Lite Embedding Scripts -->
+    <!-- Vega Embed Scripts -->
     <script type="text/javascript">
-        var specVis1 = "./js/smoking_rate_choropleth_map.json";
-        var specVis2 = "./js/smoking_rate_bubbleplot.json";
-        var specVis3 = "./js/bar_chart.json";
-        var specVis4 = "./js/line_chart.json";
-        var specVis5 = "./js/gender_butterfly_chart.json";
-        
-        // Embed the Choropleth Map
-        vegaEmbed('#choropleth_map', specVis1, { "actions": false }).catch(console.error);
+        var specChoropleth = "./js/choropleth_map.json";
+        var specBubble = "./js/bubble_plot.json";
+        var specBar = "./js/bar_chart.json";
+        var specLine = "./js/line_chart.json";
+        var specButterfly = "./js/butterfly_chart.json";
 
-        // Embed the Bubble Plot
-        vegaEmbed('#bubble_plot', specVis2, { "actions": false }).catch(console.error);
-
-        // Embed the Bar Chart
-        vegaEmbed('#bar_chart', specVis3, { "actions": false }).catch(console.error);
-
-        // Embed the Line Chart
-        vegaEmbed('#line_chart', specVis4, { "actions": false }).catch(console.error);
-
-        // Embed the Butterfly Chart
-        vegaEmbed('#gender_butterfly_chart', specVis5, { "actions": false }).catch(console.error);
+        vegaEmbed('#choropleth_map', specChoropleth, { "actions": false }).catch(console.error);
+        vegaEmbed('#bubble_plot', specBubble, { "actions": false }).catch(console.error);
+        vegaEmbed('#bar_chart', specBar, { "actions": false }).catch(console.error);
+        vegaEmbed('#line_chart', specLine, { "actions": false }).catch(console.error);
+        vegaEmbed('#butterfly_chart', specButterfly, { "actions": false }).catch(console.error);
     </script>
 </body>
 </html>
