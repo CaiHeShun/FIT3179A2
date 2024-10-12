@@ -83,3 +83,24 @@ p {
     margin-top: -10px; /* Adjusts spacing if needed */
     margin-bottom: 20px;
 }
+
+.grid-container {
+    display: grid;
+    grid-gap: 20px;
+    justify-items: center;
+}
+
+.two-columns {
+    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    gap: 40px; /* Add spacing between the columns */
+}
+
+.two-columns div {
+    min-height: 500px; /* Ensure equal height for the charts */
+}
+
+@media (max-width: 768px) {
+    .two-columns {
+        grid-template-columns: 1fr; /* Stack the charts in one column on small screens */
+    }
+}
