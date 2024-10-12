@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Daily Cigarettes Smoked in Each Region (1980-2012).",
+  "data": {
+    "url": "https://raw.githubusercontent.com/CaiHeShun/FIT3179A2/main/data/Yearly_Region_Averages.csv"
+  },
+  "mark": {"type": "line", "tooltip": true},
+  "encoding": {
+    "x": {"field": "Year", "type": "quantitative", "title": "Year"},
+    "y": {
+      "field": "Daily_Cigarettes",
+      "type": "quantitative",
+      "title": "Average Daily Cigarettes"
+    },
+    "color": {
+      "field": "Region",
+      "type": "nominal",
+      "title": "Region",
+      "scale": {
+        "domain": [
+          "Africa",
+          "Asia",
+          "Europe",
+          "North America",
+          "South America",
+          "Oceania"
+        ],
+        "range": [
+          "#FF0000",
+          "#0000FF",
+          "#00FF00",
+          "#FFA500",
+          "#800080",
+          "#000000"
+        ]
+      }
+    },
+    "tooltip": [
+      {"field": "Region", "type": "nominal", "title": "Region"},
+      {"field": "Year", "type": "quantitative", "title": "Year"},
+      {
+        "field": "Daily_Cigarettes",
+        "type": "quantitative",
+        "title": "Avg Daily Cigarettes"
+      }
+    ]
+  },
+  "config": {}
+}
