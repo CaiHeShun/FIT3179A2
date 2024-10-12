@@ -9,45 +9,65 @@ body {
 
 /* Headers */
 h1, h2 {
-    margin: 10px 0;
-    padding: 0;
     text-align: center;
+    font-weight: 700;
 }
 
 h1 {
-    font-size: 36px;
-    text-align: center;
+    font-size: 48px;
+    margin-top: 10px;
 }
 
 h2 {
     font-size: 28px;
-    text-align: center;
 }
 
-/* Center descriptions and text */
+/* Center descriptions */
 p {
     text-align: center;
     margin: 10px auto;
-    max-width: 800px; /* Limits the width of paragraphs for readability */
+    max-width: 800px;
 }
 
-/* Page */
+/* Page layout */
 .page {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 10px;
+    width: 1200px;
+    margin: auto;
+    padding-top: 35px;
+}
+
+/* Pure Grid Layout */
+.pure-g {
+    margin-bottom: 25px;
+}
+
+.pure-u-1-2 {
+    width: 49%;
+    float: left;
+    padding: 0 10px;
+}
+
+.pure-u-1 {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* Visualization Frames */
-#choro_frame, #bubble_frame, #bar_frame, #line_frame, #butterfly_frame {
-    background-color: #f4f4f4;
+#choro_frame, #scatter_frame, #bar_frame, #line_frame, #butterfly_frame {
+    background-color: white;
     padding: 20px;
     margin-bottom: 20px;
+    text-align: center;
     border-radius: 8px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Centering visualizations */
 #choropleth_map, #bubble_plot, #bar_chart, #line_chart, #butterfly_chart {
     margin: 0 auto;
     display: block;
@@ -55,32 +75,23 @@ p {
     text-align: center;
 }
 
-/* Layout for visualizations in pairs */
-.pure-u-1-2 {
-    width: 50%;
-    padding: 10px;
+/* Frame-specific customizations */
+#bar_frame {
+    padding: 20px;
 }
 
-.pure-u-1 {
-    width: 100%;
-    padding: 10px;
+#scatter_frame {
+    padding-bottom: 20px;
+}
+
+#line_frame {
+    padding-bottom: 20px;
 }
 
 /* Small Text */
 #small_text {
     font-size: 12px;
     text-align: center;
-}
-
-/* Responsive layout adjustments */
-@media (max-width: 768px) {
-    .pure-u-1-2 {
-        width: 100%;
-    }
-
-    h1, h2 {
-        font-size: 24px;
-    }
 }
 
 /* Footer */
@@ -90,4 +101,20 @@ p {
     background-color: #333;
     color: white;
     margin-top: 20px;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+    .pure-u-1-2 {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
 }
