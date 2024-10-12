@@ -3,48 +3,62 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: white;
     color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove extra margins and padding */
+h1, h2 {
+    margin: 10px 0;
+    padding: 0;
 }
 
 h1 {
-    font-size: 36px;
-    margin: 20px 0;
+    font-size: 32px;
 }
 
 h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 24px;
 }
 
 /* Page */
 .page {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 10px;
 }
 
 /* Visualization Frames */
 #choro_frame, #bubble_frame, #bar_frame, #line_frame, #butterfly_frame {
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .text-center {
     text-align: center;
 }
 
-/* Small Text */
-#small_text {
-    font-size: 12px;
+/* General Cleanup for Elements */
+div[id^='frame'] {
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* Footer */
-#footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    margin-top: 20px;
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+    .page {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
 }
