@@ -79,7 +79,7 @@
           "scale": {
             "type": "threshold",
             "domain": [10, 20, 30],
-            "range": [10, 50, 150, 200, 300, 400, 500]
+            "range": [10, 150, 300, 500]
           },
           "legend": {"format": ".1s"}
         },
