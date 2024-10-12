@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Visualizations</title>
+    <title>Smoking Data Visualizations</title>
 
     <!-- Vega & Vega-Lite -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
@@ -25,7 +25,9 @@
         <!-- Header Section -->
         <div class="pure-g" id="banner">
             <div class="pure-u-1 text-center">
-                <h1>Data Visualizations</h1>
+                <h1>Exploring the Impact of Smoking</h1>
+                <p>Smoking has long been a significant health concern worldwide, contributing to various diseases, economic burdens, and societal impacts.</p>
+                <p>In this data visualization, we aim to explore different aspects of smoking behavior, its prevalence, and the health risks associated with it. By understanding the data behind smoking, we can assess the impacts and the potential interventions to reduce smoking rates.</p>
             </div>
         </div>
 
@@ -33,7 +35,12 @@
         <div class="pure-g">
             <div class="pure-u-1">
                 <div id="choro_frame">
-                    <h2>Choropleth Map</h2>
+                    <h2>Smoking Prevalence by Country</h2>
+                    <p>This choropleth map visualizes the percentage of the population that smokes in various countries. Smoking rates vary widely due to differences in cultural attitudes, economic factors, and public health initiatives.</p>
+                    <p>In this choropleth map, the color saturation indicates the smoking rate in each country. The more <b>saturated</b> the country, the <b>higher</b> the smoking rate.</p>
+                    <div id="small_text">
+                        <p>* Hover over each country to view the exact smoking rate. Use the slider to filter countries with smoking rates above a minimum value.</p>
+                    </div>
                     <div id="choropleth_map"></div>
                 </div>
             </div>
@@ -43,7 +50,12 @@
         <div class="pure-g">
             <div class="pure-u-1">
                 <div id="bubble_frame">
-                    <h2>Bubble Plot</h2>
+                    <h2>Smoking Rates vs. Healthcare Spending</h2>
+                    <p>This bubble plot shows the relationship between smoking rates and healthcare spending in different countries. Larger bubbles represent countries with larger populations.</p>
+                    <p>The plot allows us to explore whether countries that spend more on healthcare have lower smoking rates, or if higher healthcare costs are associated with higher rates of smoking-related illnesses.</p>
+                    <div id="small_text">
+                        <p>* Use the zoom and pan features to explore different regions. The bubble size represents the population size, and you can filter by continent to focus on specific regions.</p>
+                    </div>
                     <div id="bubble_plot"></div>
                 </div>
             </div>
@@ -53,7 +65,11 @@
         <div class="pure-g">
             <div class="pure-u-1">
                 <div id="bar_frame">
-                    <h2>Bar Chart</h2>
+                    <h2>Top 10 Countries by Cigarette Consumption</h2>
+                    <p>This bar chart ranks the top 10 countries by the average number of cigarettes consumed per person per year. Smoking habits can be influenced by factors like economic status, tobacco industry presence, and government regulations.</p>
+                    <div id="small_text">
+                        <p>* Hover over each bar to see the exact number of cigarettes consumed per person. Clicking on a bar will give you more details about that country’s smoking regulations and health policies.</p>
+                    </div>
                     <div id="bar_chart"></div>
                 </div>
             </div>
@@ -63,7 +79,12 @@
         <div class="pure-g">
             <div class="pure-u-1">
                 <div id="line_frame">
-                    <h2>Line Chart</h2>
+                    <h2>Smoking Rate Trends Over Time</h2>
+                    <p>This line chart shows how smoking rates have changed over the years for different countries. The goal is to identify trends and how certain policies or social movements have influenced smoking behavior.</p>
+                    <p>Countries with declining smoking rates may have implemented successful anti-smoking campaigns, while countries with increasing rates may face challenges in public health efforts.</p>
+                    <div id="small_text">
+                        <p>* Select a country from the dropdown to view its smoking trend. You can adjust the time range by dragging on the bottom timeline for a more detailed view.</p>
+                    </div>
                     <div id="line_chart"></div>
                 </div>
             </div>
@@ -73,13 +94,18 @@
         <div class="pure-g">
             <div class="pure-u-1">
                 <div id="butterfly_frame">
-                    <h2>Butterfly Chart</h2>
+                    <h2>Smoking Rates: Male vs. Female</h2>
+                    <p>This butterfly chart compares smoking rates between males and females across different countries. Smoking prevalence often differs between genders due to cultural, social, and economic factors.</p>
+                    <p>The chart helps visualize the gender gap in smoking behavior and allows for comparisons between countries where smoking is more prevalent in one gender over the other.</p>
+                    <div id="small_text">
+                        <p>* Hover over each bar to see the smoking rate for males and females. Use the toggle buttons to sort by region or country.</p>
+                    </div>
                     <div id="butterfly_chart"></div>
                 </div>
             </div>
         </div>
     </div>
-
+    
     <!-- Vega Embed Scripts -->
     <script type="text/javascript">
         var specChoropleth = "./js/smoking_rate_choropleth_map.json";
