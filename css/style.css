@@ -36,29 +36,31 @@ p {
     padding-top: 35px;
 }
 
-/* Pure Grid Layout */
+/* Flexbox layout for better alignment */
 .pure-g {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 25px;
+    gap: 20px; /* Adds some space between the visualizations */
 }
 
-.pure-u-1-2 {
-    width: 49%; /* Adjusted to create space between two items on the same row */
-    padding: 10px;
-}
-
+/* For full-width visualization */
 .pure-u-1 {
     width: 100%;
     padding: 20px 0;
+}
+
+/* For half-width visualizations */
+.pure-u-1-2 {
+    width: calc(50% - 20px); /* Ensures two items on the same row with a gap */
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 /* Visualization Frames */
 #choro_frame, #scatter_frame, #bar_frame, #line_frame, #butterfly_frame {
     background-color: white;
     padding: 20px;
-    margin-bottom: 20px;
     text-align: center;
     border-radius: 8px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
@@ -71,32 +73,10 @@ p {
     text-align: center;
 }
 
-/* Frame-specific customizations */
-#bar_frame {
-    padding: 20px;
-}
-
-#scatter_frame {
-    padding-bottom: 20px;
-}
-
-#line_frame {
-    padding-bottom: 20px;
-}
-
 /* Small Text */
 #small_text {
     font-size: 12px;
     text-align: center;
-}
-
-/* Footer */
-#footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    margin-top: 20px;
 }
 
 /* Responsive layout adjustments */
