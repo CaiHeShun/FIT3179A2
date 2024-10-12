@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/CaiHeShun/FIT3179A2/main/data/Smoking_Data_Cleaned.csv"
+  },
+  "transform": [
+    {
+      "fold": ["Percentage_Male_Smokers", "Percentage_Female_Smokers"],
+      "as": ["Gender", "Smoking Percentage"]
+    },
+    {
+      "calculate": "datum.Gender == 'Percentage_Male_Smokers' ? 'Male' : 'Female'",
+      "as": "Gender_Label"
+    },
+    {
+      "calculate": "datum.Gender == 'Percentage_Male_Smokers' ? datum['Smoking Percentage'] : -datum['Smoking Percentage']",
+      "as": "Aligned Smoking Percentage"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Aligned Smoking Percentage",
+      "type": "quantitative",
+      "axis": {
+        "title": "Smoking Percentage",
+        "labelExpr": "datum.value < 0 ? -datum.value : datum.value"
+      }
+    },
+    "y": {"field": "Country", "type": "nominal", "axis": {"title": null}},
+    "color": {
+      "field": "Gender_Label",
+      "type": "nominal",
+      "scale": {"range": ["#ff6666", "#990033"], "domain": ["Male", "Female"]},
+      "legend": {"title": "Gender"}
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "Gender_Label", "type": "nominal", "title": "Gender"},
+      {
+        "field": "Smoking Percentage",
+        "type": "quantitative",
+        "title": "Smoking Percentage"
+      }
+    ]
+  },
+  "config": {}
+}
