@@ -1,4 +1,4 @@
-,Country,Data.Daily cigarettes,Data.Percentage.Male,Data.Percentage.Female,Data.Percentage.Total,Data.Smokers.Total,Data.Smokers.Female,Data.Smokers.Male
+,Country,Daily_Cigarettes,Percentage_Male_Smokers,Percentage_Female_Smokers,Percentage_Total_Smokers,Smokers_Total,Smokers_Female,Smokers_Male
 0,Albania,19.9,20.5,37.3,3.9,509040,48426,460614
 1,Algeria,24.4,11.2,21.3,0.9,3123101,122671,3000430
 2,Andorra,19.9,26.6,31.5,22.0,17757,7542,10216
