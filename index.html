@@ -1,82 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smoking Data Visualizations</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <!-- Import Vega & Vega-Lite -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="vega_lite_vis.js"></script>
+    <!-- Import pure.css for styling -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+    <style>
+        .text-center {
+            text-align: center;
+        }
+        .visualization-container {
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1000px;
+        }
+        h1 {
+            color: #990000;
+        }
+    </style>
 </head>
-
 <body>
     <div class="page">
-        <h1 class="title">Smoking Data Visualizations</h1>
-        <hr class="separate">
-        <br>
-        <p>
-            Smoking is a major public health concern worldwide. This collection of visualizations provides insights into smoking trends, including the global prevalence of smoking, the relationship between cigarette prices and smoking rates, and the percentage of smokers by country.
-        </p>
-        <br>
-
-        <h2>Global Smoking Rates in 2022</h2>
-        <div class="pure-g">
-            <div class="pure-u-1-1">
-                <div id="choropleth_map" class="container"></div>
+        <!-- Title section -->
+        <div class="pure-g" id="banner">
+            <div class="pure-u-1 text-center">
+                <h1>Smoking Data Visualizations</h1>
+                <p>An exploration of smoking rates, gender differences, and trends across different regions.</p>
             </div>
         </div>
-        <p>
-            The map above shows the smoking rates across different countries in 2022. The colors represent the prevalence of smoking, with darker shades indicating higher rates. Use the filters to explore the data and gain insights into global smoking trends.
-        </p>
-        <br>
-        <hr class="separate">
 
-        <h2>Bubble Plot: Smoking Rate vs. Cigarette Price</h2>
-        <div class="pure-g">
-            <div class="pure-u-1-1">
-                <div id="bubble_plot" class="container"></div>
+        <!-- Smoking Rate Choropleth Map -->
+        <div class="pure-g visualization-container">
+            <div class="pure-u-1 text-center">
+                <h2>Smoking Rates Across Countries (Choropleth Map)</h2>
+                <p>Smoking rates differ by country, influenced by factors such as healthcare policies, smoking regulations, and economic development.</p>
+                <div id="choropleth_map"></div>
             </div>
         </div>
-        <p>
-            This bubble plot illustrates the relationship between smoking rates and the price of the most sold brand of cigarettes in various regions. Larger bubbles indicate higher smoking prevalence.
-        </p>
-        <br>
-        <hr class="separate">
 
-        <h2>Bar Chart: Percentage of Total Smokers by Country</h2>
-        <div class="pure-g">
-            <div class="pure-u-1-1">
-                <div id="bar_chart" class="container"></div>
+        <!-- Smoking Rate Bubble Plot -->
+        <div class="pure-g visualization-container">
+            <div class="pure-u-1 text-center">
+                <h2>Smoking Rate vs. Cigarette Price (Bubble Plot)</h2>
+                <p>This bubble plot illustrates the relationship between smoking rates and cigarette prices across different regions.</p>
+                <div id="bubble_plot"></div>
             </div>
         </div>
-        <p>
-            The bar chart displays the percentage of smokers across different countries. It provides a clear comparison of smoking prevalence by region, showing which countries have the highest smoking rates.
-        </p>
+
+        <!-- Daily Cigarettes Smoked Line Chart -->
+        <div class="pure-g visualization-container">
+            <div class="pure-u-1 text-center">
+                <h2>Daily Cigarettes Smoked Over Time (Line Chart)</h2>
+                <p>See how the average number of cigarettes smoked daily has changed over time for various regions.</p>
+                <div id="line_chart"></div>
+            </div>
+        </div>
+
+        <!-- Gender Smoking Differences (Butterfly Chart) -->
+        <div class="pure-g visualization-container">
+            <div class="pure-u-1 text-center">
+                <h2>Gender Differences in Smoking Rates (Butterfly Chart)</h2>
+                <p>This chart compares smoking percentages between males and females across different countries.</p>
+                <div id="gender_butterfly_chart"></div>
+            </div>
+        </div>
+
+        <!-- Smoking Rate Bar Chart -->
+        <div class="pure-g visualization-container">
+            <div class="pure-u-1 text-center">
+                <h2>Countries Ranked by Smoking Rates (Bar Chart)</h2>
+                <p>This bar chart ranks countries based on their total smoking rates, giving a clear visual representation of the countries with the highest and lowest percentages of smokers.</p>
+                <div id="bar_chart"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="pure-g">
+            <div class="pure-u-1 text-center" id="end_credit">
+                <p>Data sources: Global Smoking Data 2024</p>
+            </div>
+        </div>
     </div>
 
+    <!-- Vega-Lite Embedding Scripts -->
     <script type="text/javascript">
-        var specVis1 = "./js/smoking_rate_choropleth_map.json";
-        var specVis2 = "./js/smoking_rate_bubbleplot.json";
-        var specVis3 = "./js/bar_chart.json";
-        
-        // Embed the choropleth map visualization
-        vegaEmbed('#choropleth_map', specVis1).catch(console.error);
+        // Embed the Choropleth Map
+        vegaEmbed('#choropleth_map', 'smoking_rate_choropleth_map.json', { "actions": false }).catch(console.error);
 
-        // Embed the bubble plot visualization
-        vegaEmbed('#bubble_plot', specVis2).catch(console.error);
+        // Embed the Bubble Plot
+        vegaEmbed('#bubble_plot', 'smoking_rate_bubbleplot.json', { "actions": false }).catch(console.error);
 
-        // Embed the bar chart visualization
-        vegaEmbed('#bar_chart', specVis3).catch(console.error);
+        // Embed the Line Chart
+        vegaEmbed('#line_chart', 'line_chart.json', { "actions": false }).catch(console.error);
+
+        // Embed the Butterfly Chart
+        vegaEmbed('#gender_butterfly_chart', 'gender_butterfly_chart.json', { "actions": false }).catch(console.error);
+
+        // Embed the Bar Chart
+        vegaEmbed('#bar_chart', 'bar_chart.json', { "actions": false }).catch(console.error);
     </script>
 </body>
-
 </html>
