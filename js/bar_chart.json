@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/CaiHeShun/FIT3179A2/main/data/Smoking_Data_Cleaned.csv"
+    "url": "https://raw.githubusercontent.com/CaiHeShun/FIT3179A2/main/data/Cleaned_Smoking_Data.csv"
   },
   "hconcat": [
     {
@@ -15,14 +15,14 @@
               "title": "Percentage of Total Smokers",
               "scale": {
                 "range": [
-                  "#f9f9f9",
-                  "#ffebcc",
-                  "#ffd699",
-                  "#ffb366",
-                  "#ff8000",
+                  "#ffffff",
+                  "#ffcc99",
+                  "#ff9966",
+                  "#ff6633",
                   "#ff3300",
+                  "#ff0000",
                   "#cc0000",
-                  "#660000"
+                  "#990000"
                 ]
               },
               "legend": null
@@ -34,7 +34,7 @@
             "type": "text",
             "align": "left",
             "baseline": "middle",
-            "dx": 5
+            "dx": 3
           },
           "encoding": {
             "text": {
@@ -66,8 +66,8 @@
           }
         ]
       },
-      "width": "150",
-      "height": 1000
+      "width": 150,
+      "height": 990
     },
     {
       "height": 200,
@@ -89,7 +89,7 @@
           "type": "quantitative",
           "axis": null
         },
-        "color": {"value": "#660000"}
+        "color": {"value": "#990000"}
       }
     }
   ],
