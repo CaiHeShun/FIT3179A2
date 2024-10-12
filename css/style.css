@@ -1,15 +1,6 @@
 /* Fonts */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: white;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-/* Headers */
 h1, h2 {
-    text-align: center;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
 }
 
@@ -18,79 +9,80 @@ h1 {
     margin-top: 10px;
 }
 
-h2 {
-    font-size: 28px;
+/* Small Text */
+#small_text {
+    font-size: 12px;
 }
 
-/* Center descriptions */
-p {
-    text-align: center;
-    margin: 10px auto;
-    max-width: 800px;
+/* Body */
+body {
+    background-color: white;
 }
 
-/* Page layout */
+/* Page */
 .page {
     width: 1200px;
     margin: auto;
     padding-top: 35px;
 }
 
-/* Flexbox layout for better alignment */
+/* Pure Grid */
 .pure-g {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px; /* Adds some space between the visualizations */
+    margin-bottom: 25px;
 }
 
-/* For full-width visualization */
-.pure-u-1 {
-    width: 100%;
-    padding: 20px 0;
+/* Small Font */
+.small-font {
+    font-size: 14px;
 }
 
-/* For half-width visualizations */
-.pure-u-1-2 {
-    width: calc(50% - 20px); /* Ensures two items on the same row with a gap */
-    padding: 10px;
-    box-sizing: border-box;
+/* Banner */
+#banner {
+    padding: 20px;
+    background-color: white;
 }
 
-/* Visualization Frames */
-#choro_frame, #scatter_frame, #bar_frame, #line_frame, #butterfly_frame {
+/* Choro Frame */
+#choro_frame {
     background-color: white;
     padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-}
-
-#choropleth_map, #bubble_plot, #bar_chart, #line_chart, #butterfly_chart {
     margin: 0 auto;
-    display: block;
-    max-width: 100%;
     text-align: center;
 }
 
-/* Small Text */
-#small_text {
-    font-size: 12px;
-    text-align: center;
+/* Choropleth Map */
+#choropleth_map {
+    margin: 0 auto;
 }
 
-/* Responsive layout adjustments */
-@media (max-width: 768px) {
-    .pure-u-1-2 {
-        width: 100%;
-        padding: 10px 0;
-    }
+/* Scatter Frame */
+#scatter_frame {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
 
-    h1 {
-        font-size: 32px;
-    }
+/* Bar Frame */
+#bar_frame {
+    background-color: white;
+    margin-left: 30px;
+    padding: 20px;
+    padding-bottom: 47.5px;
+}
 
-    h2 {
-        font-size: 24px;
-    }
+/* Line Frame */
+#line_frame {
+    background-color: white;
+    padding: 20px;
+}
+
+#butterfly_frame {
+    background-color: white;
+    padding: 10px 20px;
+}
+
+
+/* Background Color for Body */
+body {
+    background-color: #000000;
 }
