@@ -1,7 +1,7 @@
 /* Fonts */
 h1, h2 {
     font-family: 'Poppins', sans-serif;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 h1 {
@@ -76,6 +76,7 @@ body {
     padding: 20px;
 }
 
+/* Butterfly Frame */
 #butterfly_frame {
     background-color: white;
     padding: 20px;
@@ -83,8 +84,8 @@ body {
     text-align: center;
 }
 
-/* End Credit */
-#end_credit {
+/* Credits */
+#credits {
     background-color: black;
     padding: 10px 20px;
 }
