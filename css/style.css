@@ -1,6 +1,6 @@
 /* Fonts */
 h1, h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', serif;
     font-weight: 800;
 }
 
@@ -10,7 +10,7 @@ h1 {
 }
 
 /* Small Text */
-#small_text {
+#key {
     font-size: 12px;
 }
 
