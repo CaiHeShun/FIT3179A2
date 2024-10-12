@@ -1,7 +1,7 @@
 /* Fonts */
 h1, h2 {
     font-family: 'Poppins', serif;
-    font-weight: 800;
+    font-weight: 1000;
 }
 
 h1 {
@@ -65,7 +65,7 @@ body {
 /* Bar Frame */
 #bar_frame {
     background-color: white;
-    margin-left: 30px;
+    margin-right: 30px;
     padding: 20px;
     padding-bottom: 47.5px;
 }
