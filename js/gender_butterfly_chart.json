@@ -26,7 +26,7 @@
       "type": "quantitative",
       "axis": {
         "title": "Smoking Percentage",
-        "labelExpr": "datum.value < 0 ? -datum.value : datum.value"
+        "labelExpr": "datum.value < 1 ? -datum.value : datum.value"
       }
     },
     "y": {"field": "Country", "type": "nominal", "axis": {"title": null}},
